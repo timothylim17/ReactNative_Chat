@@ -1,4 +1,4 @@
-package com.handlebarlbas.chatdemo;
+package com.handlebarlabs.reactnativechat;
 
 import android.app.Application;
 
