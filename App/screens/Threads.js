@@ -1,30 +1,25 @@
 import React from 'react';
 import {FlatList} from 'react-native';
-import firebase from 'react-native-firebase';
 
 import {ThreadRow, Separator} from '../components/ThreadRow';
+import {listenToThreads} from '../firebase';
 
 export default class Threads extends React.Component {
   state = {};
 
   componentDidMount() {
-    this.removeThreadListener = firebase
-      .firestore()
-      .collection('MESSAGE_THREADS')
-      .orderBy('latestMessage.createdAt', 'desc')
-      .onSnapshot(querySnashot => {
-        // console.log(querySnashot);
-        const threads = querySnashot.docs.map(doc => {
-          return {
-            _id: doc.id,
-            name: '',
-            latestMessage: {text: ''},
-            ...doc.data(),
-          };
-        });
-
-        this.setState({threads});
+    this.removeThreadListener = listenToThreads().onSnapshot(querySnashot => {
+      const threads = querySnashot.docs.map(doc => {
+        return {
+          _id: doc.id,
+          name: '',
+          latestMessage: {text: ''},
+          ...doc.data(),
+        };
       });
+
+      this.setState({threads});
+    });
   }
 
   componentWillUnmount() {
