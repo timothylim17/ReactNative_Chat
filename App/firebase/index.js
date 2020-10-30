@@ -22,7 +22,7 @@ export const listenToMessages = threadId => {
 };
 
 export const createMessage = async (threadId, text) => {
-  const user = firebase.auth().currentUser.toJSON();
+  const user = currentUser();
 
   await firebase
     .firestore()
@@ -97,4 +97,13 @@ export const markThreadLastRead = threadId => {
       },
       {merge: true},
     );
+};
+
+export const listenToThreadTracking = () => {
+  const user = currentUser();
+
+  return firebase
+    .firestore()
+    .collection('USER_THREAD_TRACK')
+    .doc(user.uid);
 };
