@@ -62,3 +62,6 @@ buck-out/
 # Project
 GoogleService-Info.plist
 google-services.json
+
+#env
+/env

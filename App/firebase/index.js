@@ -107,3 +107,7 @@ export const listenToThreadTracking = () => {
     .collection('USER_THREAD_TRACK')
     .doc(user.uid);
 };
+
+// Google web ID stuff (ID, client secret)
+// 1074643551944-l6voup4qjtcuafn3156g8eje0et29o5d.apps.googleusercontent.com
+// wJKUKioBJBuuoPoijmtjaW5A

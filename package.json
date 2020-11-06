@@ -10,6 +10,7 @@
     "android": "react-native run-android"
   },
   "dependencies": {
+    "@react-native-community/google-signin": "^5.0.0",
     "@react-native-community/masked-view": "^0.1.6",
     "react": "16.9.0",
     "react-native": "0.61.5",
@@ -19,6 +20,7 @@
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.6.2",
     "react-native-screens": "^2.0.0-alpha.27",
+    "react-native-vector-icons": "^7.1.0",
     "react-navigation": "^4.0.10",
     "react-navigation-stack": "^2.0.15",
     "unique-names-generator": "^3.1.1"

@@ -1,5 +1,7 @@
 import React from 'react';
+// import {TouchableOpacity} from 'react-native';
 import {GiftedChat} from 'react-native-gifted-chat';
+import Icon from 'react-native-vector-icons';
 
 import {
   listenToMessages,
@@ -69,8 +71,9 @@ export default class Messages extends React.Component {
         onSend={this.handleSend}
         user={{
           _id: user.uid,
-        }}
-      />
+        }}>
+        <Icon.Button name="camera" />
+      </GiftedChat>
     );
   }
 }
